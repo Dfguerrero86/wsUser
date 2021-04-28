@@ -1,0 +1,6 @@
+C:\Users\danny\source\repos\wsUser\bin\wsUser.dll.config
+C:\Users\danny\source\repos\wsUser\bin\wsUser.dll
+C:\Users\danny\source\repos\wsUser\bin\wsUser.pdb
+C:\Users\danny\source\repos\wsUser\obj\x64\Debug\wsUser.csproj.CoreCompileInputs.cache
+C:\Users\danny\source\repos\wsUser\obj\x64\Debug\wsUser.dll
+C:\Users\danny\source\repos\wsUser\obj\x64\Debug\wsUser.pdb
