@@ -39,5 +39,28 @@ namespace wsUser
             conn.Close();
             return apellidoPersona;
         }
+
+        public Int64 addPersona(Persona persona)
+        {
+            string connectionString = "Server=127.0.0.1; Port=5432;Database=informatica;User Id=postgres;Password=admin;";
+            NpgsqlConnection conn = new NpgsqlConnection(connectionString);
+            conn.Open();
+            Int64 res = 0;
+            using (var cmd = new NpgsqlCommand("INSERT INTO persona(tipo_documento,numero_documento,primer_nombre,primer_apellido,grupo_sanguineo,sexo,direccion,celular,segundo_nombre,segundo_apellido) VALUES (@tipo_documento,@numero_documento, @primer_nombre, @primer_apellido,@grupo_sanguineo,@sexo,@direccion,@celular,@segundo_nombre,@segundo_apellido)", conn))
+            {
+                cmd.Parameters.AddWithValue("tipo_documento", persona.TipoDocumento);
+                cmd.Parameters.AddWithValue("numero_documento", persona.NumeroDocumento);
+                cmd.Parameters.AddWithValue("primer_nombre", persona.PrimerNombre);
+                cmd.Parameters.AddWithValue("primer_apellido", persona.PrimerApellido);
+                cmd.Parameters.AddWithValue("grupo_sanguineo", persona.GrupoSanguineo);
+                cmd.Parameters.AddWithValue("sexo", persona.Sexo);
+                cmd.Parameters.AddWithValue("direccion", persona.Direccion);
+                cmd.Parameters.AddWithValue("celular", persona.Celular);
+                cmd.Parameters.AddWithValue("segundo_nombre", persona.SegundoNombre);
+                cmd.Parameters.AddWithValue("segundo_apellido", persona.SegundoApellido);
+                res=cmd.ExecuteNonQuery();
+            }
+            return res;
+        }
     }
 }

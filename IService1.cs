@@ -17,6 +17,9 @@ namespace wsUser
 
         [OperationContract]
         String getApellidoPersona(String documento);
+
+        [OperationContract]
+        Int64 addPersona(Persona persona);
     }
 
     [DataContract]
@@ -30,13 +33,8 @@ namespace wsUser
         private string segundoApellido;
         private string primerNombre;
         private string segundoNombre;
-        private string domicilio;
-        private string telefono;
-        private string fechaNacimiento;
-        private string correoElectronico;
-        private string correoElectronicoAlterno;
+        private string direccion;
         private string celular;
-        private string estadoCivil;
 
         [DataMember]
         public string TipoDocumento
@@ -87,46 +85,16 @@ namespace wsUser
             set { segundoNombre = value; }
         }
         [DataMember]
-        public string Domicilio
+        public string Direccion
         {
-            get { return domicilio; }
-            set { domicilio = value; }
-        }
-        [DataMember]
-        public string Telefono
-        {
-            get { return telefono; }
-            set { telefono = value; }
-        }
-        [DataMember]
-        public string FechaNacimiento
-        {
-            get { return fechaNacimiento; }
-            set { fechaNacimiento = value; }
-        }
-        [DataMember]
-        public string CorreoElectronico
-        {
-            get { return correoElectronico; }
-            set { correoElectronico = value; }
-        }
-        [DataMember]
-        public string CorreoElectronicoAlterno
-        {
-            get { return correoElectronicoAlterno; }
-            set { correoElectronicoAlterno = value; }
+            get { return direccion; }
+            set { direccion = value; }
         }
         [DataMember]
         public string Celular
         {
             get { return celular; }
             set { celular = value; }
-        }
-        [DataMember]
-        public string EstadoCivil
-        {
-            get { return estadoCivil; }
-            set { estadoCivil = value; }
-        }
+        }        
     }
 }
