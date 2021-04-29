@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Runtime.Serialization;
 using System.ServiceModel;
 
@@ -8,18 +9,26 @@ namespace wsUser
     [ServiceContract]
     public interface IService1
     {
+        [OperationContract]
+        Int64 countPersonas();
 
         [OperationContract]
-        string GetData(int value);
+        List<Persona> getPersonas();
 
         [OperationContract]
-        Int64 getCountPersonas();
+        Persona getPersona(String documento);
 
         [OperationContract]
         String getApellidoPersona(String documento);
 
         [OperationContract]
         Int64 addPersona(Persona persona);
+
+        [OperationContract]
+        Int64 deletePersona(String documento);
+
+        [OperationContract]
+        Int64 updatePersona(Persona persona);
     }
 
     [DataContract]
@@ -29,10 +38,10 @@ namespace wsUser
         private string numeroDocumento;
         private string grupoSanguineo;
         private string sexo;
-        private string primerApellido;
-        private string segundoApellido;
         private string primerNombre;
         private string segundoNombre;
+        private string primerApellido;
+        private string segundoApellido;
         private string direccion;
         private string celular;
 
@@ -61,18 +70,6 @@ namespace wsUser
             set { sexo = value; }
         }
         [DataMember]
-        public string PrimerApellido
-        {
-            get { return primerApellido; }
-            set { primerApellido = value; }
-        }
-        [DataMember]
-        public string SegundoApellido
-        {
-            get { return segundoApellido; }
-            set { segundoApellido = value; }
-        }
-        [DataMember]
         public string PrimerNombre
         {
             get { return primerNombre; }
@@ -83,6 +80,18 @@ namespace wsUser
         {
             get { return segundoNombre; }
             set { segundoNombre = value; }
+        }
+        [DataMember]
+        public string PrimerApellido
+        {
+            get { return primerApellido; }
+            set { primerApellido = value; }
+        }
+        [DataMember]
+        public string SegundoApellido
+        {
+            get { return segundoApellido; }
+            set { segundoApellido = value; }
         }
         [DataMember]
         public string Direccion
