@@ -27,4 +27,3 @@ C:\Users\danny\source\repos\wsUser\obj\Debug\wsUser.csproj.CoreCompileInputs.cac
 C:\Users\danny\source\repos\wsUser\obj\Debug\wsUser.csproj.CopyComplete
 C:\Users\danny\source\repos\wsUser\obj\Debug\wsUser.dll
 C:\Users\danny\source\repos\wsUser\obj\Debug\wsUser.pdb
-C:\Users\danny\source\repos\wsUser\obj\Debug\wsUser.csprojAssemblyReference.cache
